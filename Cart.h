@@ -41,7 +41,7 @@ void ShoppingCart::clear(){
 }
 void ShoppingCart::addProduct(Product prod,int q,bool check){
         // I guess that q >= 0, since I will take it from screen with positive numbmers
-        if(q == 0) return ;
+        if(q <= 0) return ;
         // I have to check if the prod
         //it is already in my Cart
         for(std::list<std::pair<Product,int> >::iterator it = myProducts.begin(); it != myProducts.end(); ++it){
@@ -82,7 +82,7 @@ void ShoppingCart::addProduct(Product prod,int q,bool check){
         }
 }
 void ShoppingCart::addProduct(const char *bc,int q){
-    if(q == 0) return ;
+    if(q <= 0) return ;
     // Find the barcode in the Products list, and pass it over to the other addProduct function
     for(list<Product>::iterator it = allProducts.begin(); it != allProducts.end(); ++it){
             int i = 0;
@@ -119,7 +119,8 @@ void ShoppingCart::removeProduct(const char *bc){
         }
 }
 void ShoppingCart::removeProduct(const char *bc,int q){
-        for(list<pair<Product,int> >::iterator it = myProducts.begin(); it != myProducts.end(); ++it){
+        if(q <= 0) return ;
+	for(list<pair<Product,int> >::iterator it = myProducts.begin(); it != myProducts.end(); ++it){
                 int i = 0;
                 bool found = true;
                 while(bc[i]){
