@@ -10,6 +10,7 @@ int main(){
     cart.read("barcodes.txt");
     cart.printProducts();
     printf("\n");
+
     cart.getDiscounts("discount.txt");
     cart.printProducts();
     
@@ -44,6 +45,7 @@ int main(){
                     break;
                 case 5: // Print list of Products 
                     cart.printCart();
+		    cart.printPrice();
                     break;
                 default:
                     break;
