@@ -8,11 +8,11 @@
 int main(){
 	ShoppingCart cart;
 	cart.read("barcodes.txt");
-	cart.printProducts();
-	printf("\n");
+//	cart.printProducts();
+//	printf("\n");
 
 	cart.getDiscounts("discount.txt");
-	cart.printProducts();
+//	cart.printProducts();
 
 	while( true ){
 		cart.setValue(0.0);
