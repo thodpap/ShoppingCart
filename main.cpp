@@ -19,13 +19,13 @@ int main(){
 		cart.clear();
 
 		Window window;
-		window.clearScreen();
+		//window.clearScreen();
 		window.welcomeMsg();
 
 		int option = 0;
 		//printf("You choose %i\n",window.chooseMenu());
 		while(option != 4){
-			window.clearScreen();
+			//window.clearScreen();
 
 			window.mainMenu();
 			option = window.chooseMenu();
@@ -51,8 +51,10 @@ int main(){
 					break;
 			}
 			getchar();
+			window.clearScreen();
 		}
 		getchar();
+		window.clearScreen();
 	}
 }
 
