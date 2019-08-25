@@ -19,7 +19,7 @@ void Window::welcomeMsg(){
 }
 void Window::mainMenu(){
 	printf("1. Scan Barcode\n");
-	printf("2. Remove Product Completely | Partially\n"); // I will have 2 steps
+	printf("2. Remove Product\n"); // I will have 2 steps
 	printf("3. Check Price\n");
 	printf("4. Checkout\n");
 	printf("5. Print Your Cart\n");
