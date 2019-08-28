@@ -1,4 +1,6 @@
 #include <cstdio>
+#include <iostream>
+#include <unistd.h>
 
 #include "Product.h"
 #include "SuperMarket.h"
@@ -7,26 +9,20 @@
 
 int main(){
 	ShoppingCart cart;
-	cart.read("barcodes.txt");
-//	cart.printProducts();
-//	printf("\n");
+        cart.read("barcodes.txt");
 
-	cart.getDiscounts("discount.txt");
-//	cart.printProducts();
+        cart.getDiscounts("discount.txt");
 
 	while( true ){
 		cart.setValue(0.0);
 		cart.clear();
 
-		Window window;
-		//window.clearScreen();
+                Window window;
 		window.welcomeMsg();
 
-		int option = 0;
-		//printf("You choose %i\n",window.chooseMenu());
-		while(option != 4){
-			//window.clearScreen();
+                int option = 0;
 
+                while(option != 4){
 			window.mainMenu();
 			option = window.chooseMenu();
 
@@ -38,20 +34,25 @@ int main(){
 					cart.removeBarcode(); 
 					break;
 				case 3: // Print price
-					cart.printPrice();
+                                        cart.printPrice();
 					break;
 				case 4: // Checkout
-					printf("Checkout : $%.3f\n",cart.getPrice());
+                                        printf("Checkout : $%.3f\n",cart.getPrice());
 					break;
 				case 5: // Print list of Products 
 					cart.printCart();
-					cart.printPrice();
+                                        cart.printPrice();
 					break;
 				default:
 					break;
-			}
-			getchar();
-			window.clearScreen();
+                        }
+
+                        if(option >= 3)
+                            sleep(3);
+
+                        getchar();
+
+                        system("clear");
 		}
 		getchar();
 		window.clearScreen();
